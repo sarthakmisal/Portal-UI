@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-7/assets/css/registration-7.css">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism.min.css">
+<link rel="stylesheet" href="https://bootstrapbrain.com/demo/lib/assets/css/demo.css">
+
+
+<section class="bg-light p-3 p-md-4 p-xl-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
+                <div class="card border border-light-subtle rounded-4">
+                    <div class="card-body p-3 p-md-4 p-xl-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-5">
+                                    <!-- <div class="text-center mb-4">
+                                        <a href="#!">
+                                            <img src="./assets/img/bsb-logo.svg" alt="BootstrapBrain Logo" width="175"
+                                                height="57">
+                                        </a>
+                                    </div> -->
+                                    <h2 class="h3 text-center text-uppercase fw-bold">Login Form</h2>
+                                    <!-- <h3 class="fs-6 fw-normal text-secondary text-center m-0">Enter your details to
+                                        register</h3> -->
+                                </div>
+                            </div>
+                        </div>
+                        <form (submit)="handleLogin()">
+                            <div class="row gy-3 overflow-hidden">
+                               
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" [(ngModel)]="user.username"
+                                            name="username" id="username" placeholder="Username" required>
+                                        <label for="username" class="form-label">Username</label>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" [(ngModel)]="user.password"
+                                            name="password" id="password" value="" placeholder="Password" required>
+                                        <label for="password" class="form-label">Password</label>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn bsb-btn-xl btn-primary" type="submit">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-12">
+                                <hr class="mt-5 mb-4 border-secondary-subtle">
+                                <p class="m-0 text-secondary text-center">Don't have an account? <a href="/signup"
+                                        class="link-primary text-decoration-none">Sign Up</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
