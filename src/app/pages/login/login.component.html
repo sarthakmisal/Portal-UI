@@ -7,7 +7,7 @@
 
 
 <section class="bg-light p-3 p-md-4 p-xl-5">
-    <div class="container">
+    <div class="container m-5 p-3">
         <div class="row justify-content-center">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
                 <div class="card border border-light-subtle rounded-4">
@@ -22,27 +22,30 @@
                                         </a>
                                     </div> -->
                                     <h2 class="h3 text-center text-uppercase fw-bold">Login Form</h2>
+                                    <!-- {{user|json}} -->
                                     <!-- <h3 class="fs-6 fw-normal text-secondary text-center m-0">Enter your details to
                                         register</h3> -->
                                 </div>
                             </div>
                         </div>
-                        <form (submit)="handleLogin()">
+                        <form (ngSubmit)="handleLogin()">
                             <div class="row gy-3 overflow-hidden">
                                
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" [(ngModel)]="user.username"
+                                        <input type="text" class="form-control border-{{username}}" [(ngModel)]="user.username"
                                             name="username" id="username" placeholder="Username" required>
-                                        <label for="username" class="form-label">Username</label>
+                                            <label for="username" class="form-label">Username</label>
+                                            <small class="poisition-absolute {{username?'text-'+username:'d-none'}} text-{{username}}">Username is required</small>
+                                        </div>
                                     </div>
-                                </div>
-                               
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" [(ngModel)]="user.password"
+                                    
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control border-{{pass}}" [(ngModel)]="user.password"
                                             name="password" id="password" value="" placeholder="Password" required>
-                                        <label for="password" class="form-label">Password</label>
+                                            <label for="password" class="form-label">Password</label>
+                                            <small class="poisition-absolute {{pass?'text-'+pass:'d-none'}} text-{{pass}}">Password is required</small>
                                     </div>
                                 </div>
                                
@@ -56,7 +59,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <hr class="mt-5 mb-4 border-secondary-subtle">
-                                <p class="m-0 text-secondary text-center">Don't have an account? <a href="/signup"
+                                <p class="m-0 text-secondary text-center">Don't have an account? <a [routerLink]="'/signup'"
                                         class="link-primary text-decoration-none">Sign Up</a></p>
                             </div>
                         </div>

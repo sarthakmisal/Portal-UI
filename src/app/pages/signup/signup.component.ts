@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 @Component({
   selector: 'app-signup',
@@ -7,7 +8,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  constructor(private uService: UserService) { }
+  constructor(private uService: UserService,private router:Router) { }
   user: any = {
     "fname": "",
     "lname": "",
@@ -17,6 +18,7 @@ export class SignupComponent {
     "phone": ""
   }
   handleSubmit() {
+    if(!this.user.username) {alert("Username is required");return;}
     this.uService.addUser(this.user).subscribe({
       next: (data) => {
         Swal.fire({
@@ -33,7 +35,8 @@ export class SignupComponent {
           "email": "",
           "phone": ""
         }
-        console.log(data);
+        this.router.navigate(["login"])
+        
       },
       error: (err) => {
         if (err.status === 400||err.status===500) {
