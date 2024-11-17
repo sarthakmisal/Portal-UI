@@ -10,7 +10,18 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
-import { DashboardComponent } from './pages/user/dashboard/dashboard.component'
+import { DashboardComponent } from './pages/user/dashboard/dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { CategoriesComponent } from './pages/admin/categories/categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { QuizzesComponent } from './pages/admin/quizzes/quizzes.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ManageQuestionComponent } from './pages/admin/manage-question/manage-question.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { AddQuizQuestionComponent } from './pages/admin/add-quiz-question/add-quiz-question.component';
+import { SidebarComponent as Sidebar } from './pages/user/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +31,20 @@ import { DashboardComponent } from './pages/user/dashboard/dashboard.component'
     SignupComponent,
     LoginComponent,
     AdminDashboardComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    CategoriesComponent,
+    AddCategoryComponent,
+    AddQuizComponent,
+    QuizzesComponent,
+    UpdateQuizComponent,
+    ManageQuestionComponent,
+    AddQuestionComponent,
+    AddQuizQuestionComponent,
+    Sidebar
   ],
   imports: [
-    FormsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,42 @@
+<div class="row bg-white rounded shadow-lg">
+    <div class="col-md-12 d-flex flex-column justify-content-between p-3 px-4">
+        <h5 class="my-3">Menu</h5>
+
+        <h5 class="my-2">
+            <span class="nav-link" routerLink="/admin" routerLinkActive="active">
+                <i class="fa-solid fa-home"></i> Home
+            </span>
+        </h5>
+
+        <h5 class="my-2">
+            <span class="nav-link" routerLink="/admin/profile" routerLinkActive="active">
+                <i class="fa-solid fa-user-circle"></i> Profile
+            </span>
+        </h5>
+        <h5 class="my-2">
+            <span class="nav-link" routerLink="/admin/categories" routerLinkActive="active">
+                <i class="fa-solid fa-bars"></i> Categories
+            </span>
+        </h5>
+        <h5 class="my-2">
+            <span class="nav-link" routerLink="/admin/add_category" routerLinkActive="active">
+                <i class="fa-solid fa-plus-circle"></i>&nbsp;Add&nbsp;Category
+            </span>
+        </h5>
+        <h5 class="my-2">
+            <span class="nav-link" routerLink="/admin/quizzes" routerLinkActive="active">
+                <i class="fa-solid fa-user-circle"></i>&nbsp;Quizzes
+            </span>
+        </h5>
+        <h5 class="my-2">
+            <span class="nav-link" routerLink="/admin/add_quiz" routerLinkActive="active">
+                <i class="fa-solid fa-plus"></i>&nbsp;Add&nbsp;Quizz
+            </span>
+        </h5>
+        <h5 class="my-2">
+            <span class="nav-link" (click)="logOut()" routerLinkActive="active">
+                <i class="fa-solid fa-sign-out"></i>&nbsp;LogOut
+            </span>
+        </h5>
+    </div>
+</div>

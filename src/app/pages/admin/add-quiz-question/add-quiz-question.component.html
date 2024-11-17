@@ -1,0 +1,21 @@
+<!-- {{cat|json}} -->
+<form (submit)="handleSubmit()">
+    <div class="row bg-white mx-3">
+        <div class="col-md-12 mt-4 mb-2">
+            <h5 class="text-uppercase">Add Question to Quiz</h5>
+        </div>
+        <div class="col-md-3"></div>
+       <!-- {{question|json}} -->
+        <div class="col-md-6">
+            <label class="font-weight-bold" for="title">Select Question</label>
+            <select name="category" class="form-control" [(ngModel)]="question.category">
+                <option [ngValue]="null" disabled selected>-- select-question --</option>
+                <option *ngFor="let que of questions" [ngValue]="que">{{que.question}}</option>
+            </select>
+        </div>
+        
+        <div class="col-md-12 text-center my-4">
+            <button type="submit" class="btn btn-outline-primary">Save to Quizz</button>
+        </div>
+    </div>
+</form>

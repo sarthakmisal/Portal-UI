@@ -1,0 +1,63 @@
+<!-- {{user|json}} -->
+<div *ngIf="quizzes" class="row bg-white mx-3">
+    <div class="col-md-12 mt-4 mb-2">
+        <h5 class="font-weight-normal">All Quizzes</h5>
+    </div>
+    <div *ngFor="let cat of quizzes; index as i" class="col-md-12 ">
+        <div class="row">
+            <div class="col-md-12 d-flex my-1">
+                <i class="fa-solid fa-clone h4 m-3"></i>
+                <span>
+                    <!-- {{cat|json}} -->
+                    <span class="text-uppercase h4">{{cat.title}}</span><br>
+                    <span class="h6 font-weight-normal">{{cat.description}}</span>
+                </span>
+                <button class="btn btn-outline-primary position-absolute " style="right:30.6%">totMarks {{cat.marksPer*cat.no_Of_Que}}</button>
+                <button (click)='manageQuestions(cat.qz_id)' class="btn btn-outline-primary position-absolute " style="right:21.5%">Questions</button>
+                <button (click)='updateQuiz(cat.qz_id)' class="btn btn-outline-primary position-absolute " style="right:14%">Update</button>
+                <button (click)='deleteQuiz(cat.qz_id)' class="btn btn-outline-danger position-absolute " style="right:7%">Delete</button>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center flex-column">
+                <hr class="w-100">
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-12 d-flex">
+        <i class="fa-solid fa-industry h4 m-3"></i>
+        <span>
+            <span class="text-uppercase h4">Development</span><br>
+            <span class="h6 font-weight-normal">Start Creating something Useful</span>
+        </span>
+    </div>
+    <div class="col-md-12">
+        <hr class="w-100">
+    </div>
+    <div class="col-md-12 d-flex">
+        <i class="fa-solid fa-clone h4 m-3"></i>
+        <span>
+            <span class="text-uppercase h4">Programming</span><br>
+            <span class="h6 font-weight-normal">Always Appreciate Begginers</span>
+        </span>
+    </div>
+    <div class="col-md-12">
+        <hr class="w-100">
+    </div> -->
+
+    <div class="col-md-12 text-center mb-4">
+        <button routerLink="/admin/add_quiz" class="btn btn-outline-primary">Add Quiz</button>
+    </div>
+</div>
+<div class="row my-3 ">
+    <div *ngIf="!quizzes" class="col-md-12">
+        <div class="jumbotron bg-secondary text-white">
+            <h1 class="display-4 font-weight-bold">Hello, {{login.getFullName()}}!</h1>
+            <p class="lead">It looks there is no data to show you right now!!.</p>
+            <hr class="my-4">
+            <p class="lead text-uppercase font-weight-bold">Here's what you can do </p>
+            <p class="mx-4 font-weight-light my-1">It might be due to internal server Issue.</p>
+            <p class="mx-4 font-weight-light my-1">Be Patient.</p>
+            <p class="mx-4 font-weight-light my-1">Check Connectivity.</p>
+            <p class="mx-4 font-weight-light my-1">Contact Super Admin for further follow-ups.</p>
+        </div>
+    </div>
+</div>

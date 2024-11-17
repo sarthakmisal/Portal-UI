@@ -1,0 +1,42 @@
+<!-- {{cat|json}}wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww -->
+<form (submit)="handleSubmit()">
+    <div class="row bg-white mx-3">
+        <div class="col-md-12 mt-4 mb-2">
+            <h5 class="text-uppercase">Add new Quiz</h5>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <label class="font-weight-bold" for="title">Title</label>
+            <input [required]="true" autofocus type="text" [(ngModel)]="cat.title" name="title" id="username"
+                class="form-control">
+
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <label class="font-weight-bold" for="title">Description</label>
+            <textarea type="text" name="description" [(ngModel)]="cat.description" id="password" class="form-control"></textarea>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+            <label class="font-weight-bold" for="title">No of Questions</label>
+            <input [required]="true" type="number" [(ngModel)]="cat.no_Of_Que" name="no_Of_Que" id="username" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <label class="font-weight-bold" for="title">Select Category</label>
+            <select name="category" class="form-control" [(ngModel)]="cat.category">
+                <option [ngValue]="null" disabled selected>-- select-category --</option>
+                <option *ngFor="let quiz of categories" [ngValue]="quiz">{{quiz.title}}</option>
+            </select>
+            
+        </div>
+        <div class="col-md-2">
+            <label class="font-weight-bold" for="marks_per">Marks per Que</label>
+            <input [required]="true" type="number" [(ngModel)]="cat.marks_per" name="marks_per" id="username" class="form-control">
+        </div>
+        <div class="col-md-12 text-center my-4">
+            <button type="submit" class="btn btn-outline-primary">Save Quizz</button>
+        </div>
+    </div>
+</form>

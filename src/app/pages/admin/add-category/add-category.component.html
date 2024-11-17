@@ -1,0 +1,29 @@
+<!-- {{user|json}} -->
+<form (submit)="handleSubmit()">
+    <div class="row bg-white mx-3">
+        <div class="col-md-12 mt-4 mb-2">
+            <h5 class="text-uppercase">Add new Category</h5>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <label class="font-weight-bold" for="title">Title</label>
+            <input [required]="true" autofocus type="text" [(ngModel)]="cat.title" name="title" id="username" class="form-control border-{{pass}}">
+            <small class="h6 font-weight-normal {{username?'text-'+username:'d-none'}} text-{{username}}">Title is
+                required</small>
+
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <label class="font-weight-bold" for="title">Description</label>
+            <textarea type="text" name="description" [(ngModel)]="cat.description" id="password"
+                class="form-control border-{{pass}}"></textarea>
+            <small class="h6 font-weight-normal {{pass?'text-'+pass:'d-none'}} text-{{pass}}">Description is required</small>
+
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-12 text-center my-4">
+            <button type="submit" class="btn btn-outline-primary">Save Category</button>
+        </div>
+    </div>
+</form>

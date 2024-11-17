@@ -8,7 +8,9 @@ import Swal from 'sweetalert2'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  constructor(private uService: UserService,private router:Router) { }
+  constructor(private uService: UserService,private router:Router) {
+    if (this.uService.isLoggedIn()) router.navigate([this.uService.getCurrentUser() === "Normal" ? "user" : "admin"])
+  }
   user: any = {
     "fname": "",
     "lname": "",

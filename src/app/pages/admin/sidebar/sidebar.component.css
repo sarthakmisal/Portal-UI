@@ -1,0 +1,22 @@
+/* .nav-link.active {
+  font-weight: bold;
+  background-color: #e9ecef; 
+  border-color: #dee2e6 #dee2e6 #fff; 
+}
+.nav-link {
+  font-weight: normal;
+  color: #007bff;
+} */
+ .nav-link {
+    cursor: pointer;
+  font-weight: normal;
+  /* color: #007bff; Default link color */
+}
+
+.nav-link.active {
+  font-weight: bold;
+  background-color: #e9ecef;
+  color: #000; /* Active tab color */
+  border-radius: 4px; /* Optional: add rounding for visual distinction */
+  padding: 5px 10px; /* Optional: add padding for better visibility*/
+}

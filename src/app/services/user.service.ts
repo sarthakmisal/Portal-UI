@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 
 
 import base_url from './helper';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   addUser(user: any) {
     return this.http.post(`${base_url}create`, user)
   }
@@ -40,7 +41,7 @@ export class UserService {
     localStorage.removeItem("token")
     localStorage.removeItem("user")
     localStorage.removeItem("cUser")
-    return null
+    this.router.navigate(["login"])
   }
   getFullName() {
     const ur = JSON.parse(localStorage.getItem("cUser") || "")

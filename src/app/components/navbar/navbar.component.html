@@ -29,14 +29,15 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a *ngIf="!this.login.isLoggedIn()" routerLink="/login" class="text-decoration-none"><span
+      <a *ngIf="!login.isLoggedIn()" (click)="logOut()" routerLink="/login" class="text-decoration-none"><span
           class=" mx-2 text-white">Login</span></a>
-      <a *ngIf="!this.login.isLoggedIn()" routerLink="/signup" class="text-decoration-none"><span
+          <!-- <h1>{{loginStatus}}</h1> -->
+      <a *ngIf="!login.isLoggedIn()" routerLink="/signup" class="text-decoration-none"><span
           class=" mx-2 text-white my-2 my-sm-0">Register</span></a>
-      <a class="text-decoration-none"><span
-          class=" mx-2 text-white">{{this.login.getFullName()}}</span></a>
-      <a *ngIf="this.login.isLoggedIn()" (click)="this.login.logOut()" class="text-decoration-none"><span
-          class=" mx-2 text-white">LogOut</span></a>
+      <a *ngIf="login.isLoggedIn()" class="text-decoration-none"><span
+          class=" mx-2 text-white">{{login.getFullName()}}</span></a>
+      <a *ngIf="login.isLoggedIn()" (click)="logOut()" class="text-decoration-none"><span
+          class="mx-2 text-white">LogOut</span></a>
     </form>
   </div>
 </nav>

@@ -1,0 +1,49 @@
+<!-- {{ques|json}} -->
+<div *ngIf="ques.length!=0" class="row bg-white mx-3">
+    <div class="col-md-12 mt-4 mb-2">
+        <h5 class="font-weight-normal">Manage Questions</h5>
+    </div>
+    <div *ngFor="let que of ques" class="col-md-12 ">
+        <div class="row">
+            <div class="col-md-12 d-flex my-1">
+                <i class="fa-solid fa-clone h4 m-3"></i>
+                <span>
+                    <span class="text-uppercase h4">{{que.question}}</span><br>
+                    <span class="h6 font-weight-normal">{{que.quiz.title}}</span>
+                </span>
+                <button (click)='removeQuestion(que.q_id)' class="btn btn-outline-danger position-absolute "
+                    style="right:7%"><i class="fa fa-trash"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex flex-column px-4">
+                <span class="mx-5 {{que.option1==que.answer?'font-weight-bold':''}}">A : {{que.option1}}</span>
+                <span class="mx-5 {{que.option2==que.answer?'font-weight-bold':''}}">B : {{que.option2}}</span>
+                <span class="mx-5 {{que.option3==que.answer?'font-weight-bold':''}} ">C : {{que.option3}}</span>
+                <span class="mx-5 {{que.option4==que.answer?'font-weight-bold':''}}">D : {{que.option4}}</span>
+            </div>
+            <div class="col-md-12 ">
+                <hr class="w-100">
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12 text-center mb-4">
+        <button routerLink='/admin/add_question/{{aRoute.snapshot.params["qzid"]}}' class="btn btn-outline-primary">Add Question</button>
+    </div>
+</div>
+
+<div class="row my-3 ">
+    <div *ngIf="ques.length==0" class="col-md-12">
+        <div class="jumbotron bg-secondary text-white">
+            <h1 class="display-4 font-weight-bold">Hello, {{login.getFullName()}}!</h1>
+            <p class="lead">It looks there is no data to show you right now!!.</p>
+            <hr class="my-4">
+            <p class="lead text-uppercase font-weight-bold">Here's what you can do </p>
+            <p class="mx-4 font-weight-light my-1">It might be due to internal server Issue.</p>
+            <p class="mx-4 font-weight-light my-1">Be Patient.</p>
+            <p class="mx-4 font-weight-light my-1">Check Connectivity.</p>
+            <p class="mx-4 font-weight-light my-1">Contact Super Admin for further follow-ups.</p>
+        </div>
+    </div>
+</div>
