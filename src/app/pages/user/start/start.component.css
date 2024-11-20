@@ -1,0 +1,50 @@
+.progress-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+.circular-progress {
+position: relative;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background: transparent;
+}
+
+.progress-ring {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+fill: none;
+stroke: transparent;
+stroke-width: 10;
+}
+
+.progress-ring-indicator {
+fill: none;
+stroke: #FF69B4;
+stroke-width: 10;
+stroke-dasharray: 628;
+stroke-dashoffset: 628;
+stroke-linecap: round;
+transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-controls {
+margin-top: 20px;
+display: flex;
+align-items: center;
+}
+
+#percentageDisplay {
+margin-left: 10px;
+}

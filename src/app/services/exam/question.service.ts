@@ -25,4 +25,9 @@ export class QuestionService {
   removeQuestion(q_id:any,id:any){
     return this.http.put(`${this.base_url}question/removeQuestion/${id}`, {"q_id":q_id})
   }
+
+  // CALLED ONLY AFTER TEST IS CALLED
+  getQuestionsOnly(id:any){
+    return this.http.get(`${this.base_url}question/getQuestionsOnly/${id}`)
+  }
 }

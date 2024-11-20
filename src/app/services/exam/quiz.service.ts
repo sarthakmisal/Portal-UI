@@ -8,7 +8,9 @@ export class QuizService {
 
   private base_url = "http://[::1]:5500/";
   constructor(private http: HttpClient) { }
-
+  getQuizzesByCat(id:any){
+    return this.http.get(`${this.base_url}quiz/get/${id}`)
+  }
   getQuizzes() {
     return this.http.get(`${this.base_url}quiz/get`)
   }

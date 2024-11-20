@@ -1,0 +1,101 @@
+<!-- {{quiz|json}} -->
+<div *ngIf="quiz&&quiz.length!=0" class="row my-4 mx-2 d-flex justify-content-center bg-white pb-5 px-5 pt-3">
+    <div class="col-md-12 mt-4 mb-2">
+        <h4>Read Each Question Carefully</h4>
+        <p class="h6 text-secondary">Just one step to go</p>
+        <hr>
+        <h4 class="mt-2">{{quiz.title}}</h4>
+        <p>{{quiz.description}}</p>
+    </div>
+    <div class="col-md-12">
+        <h4>Important Instructions</h4>
+        <ul class="list-unstyled">
+            <li>Take your time to understand the question before answering.
+                Some questions may have multiple correct options.</li>
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <h4>Time Limit</h4>
+        <ul class="list-unstyled">
+            <li>You have <b>{{quiz.marksPer*3}} Minutes </b> to complete the quiz. The timer will start as soon as you
+                begin.
+                Unanswered questions will be marked as incomplete.</li>
+            <li>You can navigate between questions using the Next and Previous buttons.
+                Ensure to save your answer for each question before moving to the next.</li>
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <h4>Answer Submission</h4>
+        <ul class="list-unstyled">
+            <li>Once you submit your answers, you cannot go back or make changes.
+                Review all questions carefully before the final submission.</li>
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <h4>Scoring Criteria</h4>
+        <ul>
+            <li>Each correct answer carries <b>{{quiz.marksPer}} Marks </b>.
+                Negative marking of <b>-1</b> may apply for incorrect answers (if applicable).</li>
+            <li>A stable internet connection is required throughout the quiz.
+                If you lose connection, you may not be able to resume from where you left off.
+            </li>
+            <li>Avoid switching tabs or minimizing the quiz window; doing so may result in disqualification.
+                Do not use external help, including books, notes, or electronic devices.</li>
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <h4>Technical Issues</h4>
+        <ul class="list-unstyled">
+            <li>In case of technical difficulties, contact the quiz administrator immediately.
+                Refreshing the page may result in loss of progress.</li>
+        </ul>
+    </div>
+    <div class="col-md-12">
+        <h4>Declaration</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="chkbox" [(ngModel)]="agree"> <label for="chkbox"> &nbsp;I agree, By starting
+                    the quiz, you agree to adhere to the rules and conditions mentioned above.</label></li>
+        </ul>
+    </div>
+    <div class="col-md-12 mt-3 text-center">
+        <button [disabled]="!agree" (click)="startQUiz(quiz.qz_id)" class="btn btn-primary">Start QUiz</button>
+    </div>
+</div>
+<!-- <div class="col-md-4 bg-white m-4 " *ngFor="let quiz of quizzes">
+        <div class="row p-3 rounded shadow-lg">
+            <div class="col-md-1">
+                <img style="border-radius: 50%;" width="50vw"
+                    src="https://imgs.search.brave.com/w2N9ClM-1SMV9mg9PJJc5Hv0pkE5uiNXt3qMEEwdbps/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ha20t/aW1nLWEtaW4udG9z/c2h1Yi5jb20vaW5k/aWF0b2RheS9pbWFn/ZXMvbWVkaWFtYW5h/Z2VyLzEtc3VzaGFu/dC11bnRpbWVseS1n/b29kYnllLmpwZWc_/YllWZUVDTXFNUzJr/WDNYOHJGMlZFTTFY/YUpWUGFpTUw"
+                    alt="">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-9" style="line-height: 70%;">
+                <p class="h5">{{quiz.title}}</p>
+                <p class="font-weight-light">{{quiz.category.title}}</p>
+            </div>
+            <div class="col-md-12">
+                <p class="font-weight-normal">{{quiz.description}}</p>
+            </div>
+            <div class="col-md-12 d-flex">
+                <button class="btn text-info mx-auto">View</button>
+                <button routerLink="/start_quiz/{{quiz.qz_id}}" class="btn text-success mx-auto">Start</button>
+                <button class="btn text-danger mx-auto">Questions</button>
+                <button class="btn text-danger mx-auto">Marks</button>
+            </div>
+        </div>
+    </div> -->
+
+<!-- <div class="row my-3 ">
+    <div *ngIf="!quizz||quizz.length===0" class="col-md-12">
+        <div class="jumbotron bg-secondary text-white">
+            <h1 class="display-4 font-weight-bold">Hello, {{login.getFullName()}}!</h1>
+            <p class="lead">It looks there is no data to show you right now!!.</p>
+            <hr class="my-4">
+            <p class="lead text-uppercase font-weight-bold">Here's what you can do </p>
+            <p class="mx-4 font-weight-light my-1">It might be due to internal server Issue.</p>
+            <p class="mx-4 font-weight-light my-1">Be Patient.</p>
+            <p class="mx-4 font-weight-light my-1">Check Connectivity.</p>
+            <p class="mx-4 font-weight-light my-1">Contact Super Admin for further follow-ups.</p>
+        </div>
+    </div>
+</div> -->

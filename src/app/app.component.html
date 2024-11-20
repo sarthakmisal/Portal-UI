@@ -1,3 +1,8 @@
-<router-outlet>
-    <app-navbar />
-</router-outlet>    
+<ngx-ui-loader fgsColor="red" text="Please Wait!!" [hasProgressBar]=true>
+
+</ngx-ui-loader>
+<div ngxUiLoaderBlurred (blur)="6">
+    <router-outlet>
+        <app-navbar />
+    </router-outlet>
+</div>

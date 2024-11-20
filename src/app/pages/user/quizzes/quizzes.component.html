@@ -1,0 +1,43 @@
+<!-- {{quizzes|json}} -->
+<div *ngIf="quizzes&&quizzes.length!=0" class="row  mx-2 d-flex justify-content-center">
+    <div class="col-md-12 mt-4 mb-2">
+        <h4 class="font-weight-bold text-uppercase">All QUizzes</h4>
+    </div>
+    <div class="col-md-4 bg-white m-4 " *ngFor="let quiz of quizzes">
+        <div  class="row p-3 rounded shadow-lg" >
+            <div class="col-md-1">
+                <img style="border-radius: 50%;" width="50vw" src="https://imgs.search.brave.com/w2N9ClM-1SMV9mg9PJJc5Hv0pkE5uiNXt3qMEEwdbps/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ha20t/aW1nLWEtaW4udG9z/c2h1Yi5jb20vaW5k/aWF0b2RheS9pbWFn/ZXMvbWVkaWFtYW5h/Z2VyLzEtc3VzaGFu/dC11bnRpbWVseS1n/b29kYnllLmpwZWc_/YllWZUVDTXFNUzJr/WDNYOHJGMlZFTTFY/YUpWUGFpTUw" alt="">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-9" style="line-height: 70%;">
+                <p class="h5">{{quiz.title}}</p>
+                <p class="font-weight-light">{{quiz.category.title}}</p>
+            </div>
+            <div class="col-md-12">
+                <p class="font-weight-normal">{{quiz.description}}</p>
+            </div>
+            <div class="col-md-12 d-flex">
+                <button class="btn text-info mx-auto">View</button>
+                <button routerLink="/start_quiz/{{quiz.qz_id}}" class="btn text-success mx-auto">Start</button>
+                <button class="btn text-danger mx-auto">Questions</button>
+                <button class="btn text-danger mx-auto">Marks</button>
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+<div class="row my-3 ">
+    <div *ngIf="!quizzes||quizzes.length===0" class="col-md-12">
+        <div class="jumbotron bg-secondary text-white">
+            <h1 class="display-4 font-weight-bold">Hello, {{login.getFullName()}}!</h1>
+            <p class="lead">It looks there is no data to show you right now!!.</p>
+            <hr class="my-4">
+            <p class="lead text-uppercase font-weight-bold">Here's what you can do </p>
+            <p class="mx-4 font-weight-light my-1">It might be due to internal server Issue.</p>
+            <p class="mx-4 font-weight-light my-1">Be Patient.</p>
+            <p class="mx-4 font-weight-light my-1">Check Connectivity.</p>
+            <p class="mx-4 font-weight-light my-1">Contact Super Admin for further follow-ups.</p>
+        </div>
+    </div>
+</div>

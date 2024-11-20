@@ -1,15 +1,16 @@
+<!-- {{categories|json}} -->
 <div class="row bg-white rounded shadow-lg">
     <div class="col-md-12 d-flex flex-column justify-content-between p-3 px-4">
         <h5 class="my-3">Menu</h5>
 
         <h5 class="my-2">
-            <span class="nav-link" routerLink="/admin" routerLinkActive="active">
+            <span (click)="reflectQuizzs(0)" class="nav-link" routerLinkActive="active">
                 <i class="fa-solid fa-home"></i> Home
             </span>
         </h5>
-        <h5 *ngFor="let quiz of quizzs" class="my-2">
-            <span class="nav-link" routerLink="/admin" routerLinkActive="active">
-                <i class="fa-solid fa-th-large"></i> {{quiz.title}}
+        <h5 *ngFor="let cat of categories" class="my-2">
+            <span class="nav-link" (click)="reflectQuizzs(cat.cat_id)" routerLinkActive="active">
+                <i class="fa-solid fa-th-large"></i> {{cat.title}}
             </span>
         </h5>
 

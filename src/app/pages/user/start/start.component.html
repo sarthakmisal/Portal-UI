@@ -1,0 +1,73 @@
+<!-- {{questions|json}} -->
+<div *ngIf="!isSubmit" class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="h2"><b>{{questions?questions[0].quiz.title:""}}</b>&nbsp;Test has been Started</p>
+        </div>
+    </div>
+    <!-- <form action=""> -->
+        
+        <app-loader class="position-absolute shadow" style="right:1%;top:27%;" [percentage]="percentage" [time]="remaining" />
+    <div class="row bg-white p-3 my-4 rounded" *ngFor="let que of questions;index as i">
+        <div class="col-md-10">
+            <h5>Q {{1+i+")"}}&nbsp;{{ que.question}}</h5>
+            <hr>
+        </div>
+        <div class="col-md-6 d-flex flex-column">
+            <span>
+                <input type="radio" id="answer{{i}}" name="answer{{i}}" [value]="que.option1"
+                    [(ngModel)]="que.attempted">&nbsp;<label for="answer{{i}}">{{que.option1}}</label>
+            </span>
+            <span>
+                <input type="radio" id="answera{{i}}" name="answer{{i}}" [value]="que.option2"
+                    [(ngModel)]="que.attempted">&nbsp;<label for="answera{{i}}">{{que.option2}}</label>
+            </span>
+        </div>
+        <div class="col-md-6 d-flex flex-column">
+            <span>
+                <input type="radio" id="answerb{{i}}" name="answer{{i}}" [value]="que.option3"
+                    [(ngModel)]="que.attempted">&nbsp;<label for="answerb{{i}}">{{que.option3}}</label>
+            </span>
+            <span>
+                <input type="radio" id="answerc{{i}}" name="answer{{i}}" [value]="que.option4"
+                    [(ngModel)]="que.attempted">&nbsp;<label for="answerc{{i}}">{{que.option4}}</label>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button (click)="handleFinish()" class="btn btn-info">Submit</button>
+        </div>
+    </div>
+
+    <!-- </form> -->
+</div>
+<div class="container">
+    <div *ngIf="isSubmit" class="row">
+        <div class="container p-5 m-5 bg-white">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Attempted : {{analytics.attempted}}</h2>
+                    <h2>Correct : {{analytics.correct}}</h2>
+                    <h2>Score : {{analytics.totalMarks}}%</h2>
+                    <button class="btn btn-info m-2" [routerLink]="'/0'">Home</button>
+                    <button class="btn btn-danger m-2" onclick="print()">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const slider = document.getElementById('percentageSlider');
+        const progressIndicator = document.getElementById('progressIndicator');
+        const percentageDisplay = document.getElementById('percentageDisplay');
+        const radius = 90;
+        const circumference = radius * 2 * Math.PI;
+
+        slider.addEventListener('input', function () {
+            const percentage = this.value;
+            const progress = circumference - (percentage / 100) * circumference;
+
+            progressIndicator.style.strokeDashoffset = progress;
+            percentageDisplay.textContent = `${percentage}%`;
+        });
+    </script>

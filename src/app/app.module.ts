@@ -22,6 +22,11 @@ import { ManageQuestionComponent } from './pages/admin/manage-question/manage-qu
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { AddQuizQuestionComponent } from './pages/admin/add-quiz-question/add-quiz-question.component';
 import { SidebarComponent as Sidebar } from './pages/user/sidebar/sidebar.component';
+import { QuizzesComponent as Quizzes } from './pages/user/quizzes/quizzes.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { StartComponent } from './pages/user/start/start.component';
+import { LoaderComponent } from './pages/user/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +47,18 @@ import { SidebarComponent as Sidebar } from './pages/user/sidebar/sidebar.compon
     ManageQuestionComponent,
     AddQuestionComponent,
     AddQuizQuestionComponent,
-    Sidebar
+    Sidebar,
+    Quizzes,
+    InstructionsComponent,
+    StartComponent,
+    LoaderComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
